@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.chusho_kigyocho_20230515.mapper.NormaluserMapper">
+    <insert id="save">
+        insert into `normaluser`(`normaluser_username`, `normaluser_password`)
+        values (
+            #{normaluserUsername}, #{normaluserPassword}
+        );
+    </insert>
+    <update id="delete">
+        update `normaluser` set `normaluser_delete_flag` = 1
+        where `normaluser_id` = #{normaluserId};
+    </update>
+    <select id="login" resultType="boolean">
+        select count(1) &gt; 0  from `normaluser` where `normaluser_username` = #{normaluserUsername}
+        and `normaluser_password` = #{normaluserPassword} and `normaluser_delete_flag` &lt;&gt; 1;
+    </select>
+
+</mapper>

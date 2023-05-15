@@ -1,28 +1,20 @@
 package com.example.chusho_kigyocho_20230515.entity;
 
-public class manager {
+public class Manager {
     private Integer managerId;
 
-    private Integer managerDeleteFlag;
+    private Boolean managerDeleteFlag;
 
     private String managerUsername;
 
     private String managerPassword;
 
-    public manager(Integer managerId, String managerUsername, String managerPassword) {
-        this.managerId = managerId;
+    public Manager(String managerUsername, String managerPassword) {
         this.managerUsername = managerUsername;
         this.managerPassword = managerPassword;
     }
 
-    public manager(Integer managerId, Integer managerDeleteFlag, String managerUsername, String managerPassword) {
-        this.managerId = managerId;
-        this.managerDeleteFlag = managerDeleteFlag;
-        this.managerUsername = managerUsername;
-        this.managerPassword = managerPassword;
-    }
-
-    public manager() {
+    public Manager() {
     }
 
     public Integer getManagerId() {
@@ -33,11 +25,11 @@ public class manager {
         this.managerId = managerId;
     }
 
-    public Integer getManagerDeleteFlag() {
+    public Boolean getManagerDeleteFlag() {
         return managerDeleteFlag;
     }
 
-    public void setManagerDeleteFlag(Integer managerDeleteFlag) {
+    public void setManagerDeleteFlag(Boolean managerDeleteFlag) {
         this.managerDeleteFlag = managerDeleteFlag;
     }
 
@@ -55,5 +47,15 @@ public class manager {
 
     public void setManagerPassword(String managerPassword) {
         this.managerPassword = managerPassword;
+    }
+
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "managerId=" + managerId +
+                ", managerDeleteFlag=" + managerDeleteFlag +
+                ", managerUsername='" + managerUsername + '\'' +
+                ", managerPassword='" + managerPassword + '\'' +
+                '}';
     }
 }
