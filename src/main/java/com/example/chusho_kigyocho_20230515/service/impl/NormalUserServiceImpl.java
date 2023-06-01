@@ -4,7 +4,9 @@ import com.example.chusho_kigyocho_20230515.entity.Normaluser;
 import com.example.chusho_kigyocho_20230515.mapper.NormaluserMapper;
 import com.example.chusho_kigyocho_20230515.service.NormaluserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NormalUserServiceImpl implements NormaluserService {
 
     @Autowired

@@ -6,7 +6,7 @@ import com.example.chusho_kigyocho_20230515.mapper.ManagerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public interface ManagerService {
     int save(Manager manager);
 

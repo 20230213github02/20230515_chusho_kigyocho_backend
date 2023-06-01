@@ -7,9 +7,11 @@ import com.example.chusho_kigyocho_20230515.entity.Normaluser;
 import com.example.chusho_kigyocho_20230515.mapper.ApplicationMapper;
 import com.example.chusho_kigyocho_20230515.mapper.ManagerMapper;
 import com.example.chusho_kigyocho_20230515.mapper.NormaluserMapper;
+import com.example.chusho_kigyocho_20230515.service.ApplicationService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
@@ -121,6 +123,19 @@ class ApplicationTests {
 //        application.setAppKokaiyoStatus("fjwo");
 //        application.setAppShinseishaKoshinDateTime(new Date());
         List<Application> all = applicationMapper.all();
+        for (Application a :
+                all) {
+            System.out.println(a);
+        }
+    }
+
+    @Autowired
+//    @Qualifier("ApplicationService2")
+    private ApplicationService applicationService;
+
+    @Test
+    void test20230601_02_applicationService(){
+        List<Application> all = applicationService.all();
         for (Application a :
                 all) {
             System.out.println(a);
