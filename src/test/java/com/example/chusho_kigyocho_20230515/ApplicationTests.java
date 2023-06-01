@@ -1,14 +1,19 @@
 package com.example.chusho_kigyocho_20230515;
 
 import com.example.chusho_kigyocho_20230515.controller.NormaluserController;
+import com.example.chusho_kigyocho_20230515.entity.Application;
 import com.example.chusho_kigyocho_20230515.entity.Manager;
 import com.example.chusho_kigyocho_20230515.entity.Normaluser;
+import com.example.chusho_kigyocho_20230515.mapper.ApplicationMapper;
 import com.example.chusho_kigyocho_20230515.mapper.ManagerMapper;
 import com.example.chusho_kigyocho_20230515.mapper.NormaluserMapper;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Date;
+import java.util.List;
 
 @SpringBootTest
 class ApplicationTests {
@@ -103,5 +108,22 @@ class ApplicationTests {
         System.out.println(result);
         System.out.println(result.getData());
         System.out.println(result.getData());
+    }
+
+    @Autowired
+    private ApplicationMapper applicationMapper;
+
+    @Test
+    void test20230601_01_applicationMapper(){
+//        Application application = new Application();
+//        application.setAppShinseiKubun("fef");
+//        application.setAppShinseiDate(new Date());
+//        application.setAppKokaiyoStatus("fjwo");
+//        application.setAppShinseishaKoshinDateTime(new Date());
+        List<Application> all = applicationMapper.all();
+        for (Application a :
+                all) {
+            System.out.println(a);
+        }
     }
 }

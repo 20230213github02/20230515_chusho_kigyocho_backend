@@ -58,6 +58,17 @@ public class Application {
         return appShinseishaKoshinDateTime;
     }
 
+    @Override
+    public String toString() {
+        return "Application{" +
+                "appUketsukeNo=" + appUketsukeNo +
+                ", appShinseiKubun='" + appShinseiKubun + '\'' +
+                ", appShinseiDate=" + appShinseiDate +
+                ", appKokaiyoStatus='" + appKokaiyoStatus + '\'' +
+                ", appShinseishaKoshinDateTime=" + appShinseishaKoshinDateTime +
+                '}';
+    }
+
     public void setAppShinseishaKoshinDateTime(Date appShinseishaKoshinDateTime) {
         this.appShinseishaKoshinDateTime = appShinseishaKoshinDateTime;
     }
