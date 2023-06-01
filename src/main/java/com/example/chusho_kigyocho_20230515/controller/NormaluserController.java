@@ -2,6 +2,7 @@ package com.example.chusho_kigyocho_20230515.controller;
 
 import com.example.chusho_kigyocho_20230515.entity.Normaluser;
 import com.example.chusho_kigyocho_20230515.mapper.NormaluserMapper;
+import com.example.chusho_kigyocho_20230515.service.NormaluserService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/Normaluser")
 public class NormaluserController {
     @Autowired
-    private NormaluserMapper normaluserMapper;
+    private NormaluserService normaluserService;
 
     @CrossOrigin
     @RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -21,7 +22,7 @@ public class NormaluserController {
         JsonResult<Void> result = new JsonResult<>();
 
         try{
-            normaluserMapper.save(normaluser);
+            normaluserService.save(normaluser);
             result.setState(200);
             System.out.println("success");
         } catch (Exception e){
@@ -37,7 +38,7 @@ public class NormaluserController {
         JsonResult<Void> result = new JsonResult<>();
 
         try{
-            int delete = normaluserMapper.delete(normaluserId);
+            int delete = normaluserService.delete(normaluserId);
             result.setState(200);
             System.out.println("success");
         } catch (Exception e){
@@ -55,7 +56,7 @@ public class NormaluserController {
         JsonResult<Boolean> result = new JsonResult<>();
 
         try{
-            boolean login = normaluserMapper.login(normaluser);
+            boolean login = normaluserService.login(normaluser);
             if(login){
                 result.setState(200);
                 System.out.println("success");

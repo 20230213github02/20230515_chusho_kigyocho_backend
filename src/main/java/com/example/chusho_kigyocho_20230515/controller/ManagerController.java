@@ -2,6 +2,7 @@ package com.example.chusho_kigyocho_20230515.controller;
 
 import com.example.chusho_kigyocho_20230515.entity.Manager;
 import com.example.chusho_kigyocho_20230515.mapper.ManagerMapper;
+import com.example.chusho_kigyocho_20230515.service.ManagerService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,15 +14,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/Manager")
 public class ManagerController {
     @Autowired
-    private ManagerMapper managerMapper;
-
+    private ManagerService managerService;
     @CrossOrigin
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public JsonResult save(@RequestBody Manager manager){
         JsonResult<Void> result = new JsonResult<>();
 
         try{
-            managerMapper.save(manager);
+            managerService.save(manager);
             result.setState(200);
             System.out.println("success");
         } catch (Exception e){
@@ -37,7 +37,7 @@ public class ManagerController {
         JsonResult<Void> result = new JsonResult<>();
 
         try{
-            int delete = managerMapper.delete(managerId);
+            int delete = managerService.delete(managerId);
             result.setState(200);
             System.out.println("success");
         } catch (Exception e){
@@ -55,7 +55,7 @@ public class ManagerController {
         JsonResult<Boolean> result = new JsonResult<>();
 
         try{
-            boolean login = managerMapper.login(manager);
+            boolean login = managerService.login(manager);
             if(login){
                 result.setState(200);
                 System.out.println("success");
