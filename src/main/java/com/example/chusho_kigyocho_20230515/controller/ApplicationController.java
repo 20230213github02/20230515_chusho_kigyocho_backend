@@ -5,6 +5,7 @@ import com.example.chusho_kigyocho_20230515.service.ApplicationService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class ApplicationController {
     @Autowired
     private ApplicationService applicationService;
 
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public JsonResult all(){
         JsonResult<List> result = new JsonResult<>();
         List<Application> all;
