@@ -23,6 +23,7 @@ public class NotificationController {
         List<Notification> all;
         try {
                     all = notificationService.all();
+                    result.setData(all);
                     result.setState(200);
             System.out.println("success");
         } catch (Exception e){

@@ -23,6 +23,7 @@ public class ApplicationController {
         List<Application> all;
         try {
                     all = applicationService.all();
+                    result.setData(all);
                     result.setState(200);
             System.out.println("success");
         } catch (Exception e){
