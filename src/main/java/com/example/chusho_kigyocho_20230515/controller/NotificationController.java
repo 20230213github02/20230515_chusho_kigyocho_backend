@@ -4,12 +4,15 @@ import com.example.chusho_kigyocho_20230515.entity.Notification;
 import com.example.chusho_kigyocho_20230515.service.NotificationService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+//added by ZHY for test
+@Component
 @RestController
 @RequestMapping("/Notification")
 public class NotificationController {

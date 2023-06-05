@@ -1,13 +1,17 @@
 package com.example.chusho_kigyocho_20230515;
 
+import com.example.chusho_kigyocho_20230515.controller.ApplicationController;
 import com.example.chusho_kigyocho_20230515.controller.NormaluserController;
+import com.example.chusho_kigyocho_20230515.controller.NotificationController;
 import com.example.chusho_kigyocho_20230515.entity.Application;
 import com.example.chusho_kigyocho_20230515.entity.Manager;
 import com.example.chusho_kigyocho_20230515.entity.Normaluser;
+import com.example.chusho_kigyocho_20230515.entity.Notification;
 import com.example.chusho_kigyocho_20230515.mapper.ApplicationMapper;
 import com.example.chusho_kigyocho_20230515.mapper.ManagerMapper;
 import com.example.chusho_kigyocho_20230515.mapper.NormaluserMapper;
 import com.example.chusho_kigyocho_20230515.service.ApplicationService;
+import com.example.chusho_kigyocho_20230515.service.NotificationService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -141,4 +145,42 @@ class ApplicationTests {
             System.out.println(a);
         }
     }
+
+    @Autowired
+    private NotificationService notificationService;
+    @Test
+    void test20230605_01_notification(){
+        List<Notification> notifications = notificationService.all();
+        for (Notification n :
+                notifications) {
+            System.out.println(n);
+        }
+    }
+
+    @Autowired
+   private NotificationController notificationController;
+
+    @Test
+    void test20230605_02_notification(){
+        JsonResult all = notificationController.all();
+        List<Notification> data = (List<Notification>)all.getData();
+        for (Notification n :
+                data) {
+            System.out.println(n);
+        }
+    }
+
+    @Autowired
+    private ApplicationController applicationController;
+
+    @Test
+    void test20230605_03_application(){
+        JsonResult all = applicationController.all();
+        List<Application> data = (List<Application>) all.getData();
+        for (Application a :
+                data) {
+            System.out.println(a);
+        }
+    }
+
 }

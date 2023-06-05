@@ -49,7 +49,19 @@ public class Notification {
         return ntcJUYO;
     }
 
+
+
     public void setNtcJUYO(String ntcJUYO) {
         this.ntcJUYO = ntcJUYO;
+    }
+
+    @Override
+    public String toString() {
+        return "Notification{" +
+                "ntcID=" + ntcID +
+                ", ntcDATE=" + ntcDATE +
+                ", ntcTITLE='" + ntcTITLE + '\'' +
+                ", ntcJUYO='" + ntcJUYO + '\'' +
+                '}';
     }
 }
