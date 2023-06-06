@@ -4,12 +4,10 @@ import com.example.chusho_kigyocho_20230515.entity.Application;
 import com.example.chusho_kigyocho_20230515.service.ApplicationService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,7 +44,8 @@ public class ApplicationController {
         return  result;
     }
 
-    public PageInfo<Application> selectPage(int pageNum, int pageSize){
+    @RequestMapping(value = "/page/{pageNum}/{pageSize}")
+    public PageInfo<Application> selectPage(@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize){
         PageInfo<Application> pageInfo = applicationService.selectPage(pageNum, pageSize);
         return pageInfo;
     }
