@@ -45,6 +45,7 @@ public class ApplicationController {
     }
 
     @RequestMapping(value = "/page/{pageNum}/{pageSize}")
+    @CrossOrigin
     public PageInfo<Application> selectPage(@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize){
         PageInfo<Application> pageInfo = applicationService.selectPage(pageNum, pageSize);
         return pageInfo;
