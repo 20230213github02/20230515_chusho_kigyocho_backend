@@ -6,4 +6,8 @@
         from `application`
     </select>
 
+   <select id="selectPage" resultMap="BaseResultMap">
+       select <include refid="Base_Column_List"/>
+           from `application`
+   </select>
 </mapper>
