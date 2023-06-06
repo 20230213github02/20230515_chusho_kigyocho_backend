@@ -22,10 +22,10 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public List<Application> selectPage(int pageNum, int pageSize) {
+    public PageInfo<Application> selectPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         List<Application> applications=applicationMapper.all();
         PageInfo<Application> pageInfo = new PageInfo<>(applications);
-        return pageInfo.getList();
+        return pageInfo;
     }
 }

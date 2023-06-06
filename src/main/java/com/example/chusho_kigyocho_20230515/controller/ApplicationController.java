@@ -3,6 +3,7 @@ package com.example.chusho_kigyocho_20230515.controller;
 import com.example.chusho_kigyocho_20230515.entity.Application;
 import com.example.chusho_kigyocho_20230515.service.ApplicationService;
 import com.example.chusho_kigyocho_20230515.util.JsonResult;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -45,8 +46,8 @@ public class ApplicationController {
         return  result;
     }
 
-    public List<Application> selectPage(int pageNum, int pageSize){
-        List<Application> applications = applicationService.selectPage(pageNum,pageSize);
-        return applications;
+    public PageInfo<Application> selectPage(int pageNum, int pageSize){
+        PageInfo<Application> pageInfo = applicationService.selectPage(pageNum, pageSize);
+        return pageInfo;
     }
 }

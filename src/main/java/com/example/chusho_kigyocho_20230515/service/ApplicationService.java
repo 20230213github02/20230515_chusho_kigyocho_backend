@@ -1,6 +1,7 @@
 package com.example.chusho_kigyocho_20230515.service;
 
 import com.example.chusho_kigyocho_20230515.entity.Application;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,5 +12,5 @@ public interface ApplicationService {
 
     List<Application> all();
 
-    List<Application> selectPage(int pageNum, int pageSize);
+    PageInfo<Application> selectPage(int pageNum, int pageSize);
 }

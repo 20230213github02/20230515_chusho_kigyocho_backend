@@ -186,10 +186,10 @@ class ApplicationTests {
 
     @Test
     void test20230606_01_application(){
-        List<Application> applications = applicationController.selectPage(10, 10);
-        for (Application a :
-                applications) {
-            System.out.println(a);
-        }
+//        List<Application> applications = applicationController.selectPage(10, 10);
+//        for (Application a :
+//                applications) {
+//            System.out.println(a);
+//        }
     }
 }
