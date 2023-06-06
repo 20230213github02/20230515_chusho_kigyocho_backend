@@ -10,4 +10,6 @@ import java.util.List;
 public interface ApplicationService {
 
     List<Application> all();
+
+    List<Application> selectPage(int pageNum, int pageSize);
 }

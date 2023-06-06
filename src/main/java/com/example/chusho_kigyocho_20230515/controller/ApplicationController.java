@@ -44,4 +44,9 @@ public class ApplicationController {
         }
         return  result;
     }
+
+    public List<Application> selectPage(int pageNum, int pageSize){
+        List<Application> applications = applicationService.selectPage(pageNum,pageSize);
+        return applications;
+    }
 }
