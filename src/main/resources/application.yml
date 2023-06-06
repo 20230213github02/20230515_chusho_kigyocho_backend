@@ -10,3 +10,5 @@ server:
   port: 8815
 mybatis:
   mapper-locations: classpath:xml/*.xml
+
+pagesize: 20

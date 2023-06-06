@@ -176,11 +176,12 @@ class ApplicationTests {
     @Test
     void test20230605_03_application(){
         JsonResult all = applicationController.all();
-        List<Application> data = (List<Application>) all.getData();
-        for (Application a :
-                data) {
-            System.out.println(a);
-        }
+//        List<Application> data = (List<Application>) all.getData();
+//        for (Application a :
+//                data) {
+//            System.out.println(a);
+//        }
+        System.out.println(all);
     }
 
 }

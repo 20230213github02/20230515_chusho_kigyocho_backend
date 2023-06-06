@@ -26,8 +26,14 @@ public class ApplicationController {
     public JsonResult all(){
         JsonResult<List> result = new JsonResult<>();
         List<Application> all;
+
+
         try {
                     all = applicationService.all();
+
+            // for test by ZHY
+            System.out.println(all);
+
                     result.setData(all);
                     result.setState(200);
             System.out.println("success");
